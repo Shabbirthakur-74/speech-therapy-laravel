@@ -1,0 +1,471 @@
+/* ==========================================================================
+   Speech-Therapy Dashboard — Patient Report Stylesheet
+   ========================================================================== */
+
+:root {
+    /* ---------- Main colors ---------- */
+    --st-primary:        #2563EB;
+    --st-primary-dark:   #1D4ED8;
+    --st-primary-light:  #EFF6FF;
+    --st-accent:         #7C3AED;
+    --st-accent-light:   #F5F3FF;
+    --st-ink:            #172033;
+    --st-muted:          #64748B;
+    --st-page-bg:        #F1F5F9;
+    --st-card-bg:        #FFFFFF;
+    --st-card-blue:      #F8FBFF;
+    --st-white:          #FFFFFF;
+    --st-line:           #E2E8F0;
+    --st-line-dark:      #CBD5E1;
+    --st-paper:          #FDF9F1;
+
+    /* ---------- Status / danger ---------- */
+    --st-danger:         #DC2626;
+    --st-danger-dark:    #B91C1C;
+    --st-danger-light:   #FEF2F2;
+
+    /* ---------- Gradients ---------- */
+    --st-gradient-primary: linear-gradient(135deg, #2563EB 0%, #4F46E5 100%);
+    --st-gradient-accent:  linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    --st-gradient-header:  linear-gradient(90deg, #EFF6FF 0%, #F5F3FF 100%);
+    --st-gradient-paper:   linear-gradient(90deg, #FDF9F1 0%, #F5F3FF 100%);
+
+    /* ---------- Other ---------- */
+    --st-radius:         14px;
+    --st-radius-sm:      8px;
+    --st-shadow:         0 2px 10px rgba(15, 23, 42, 0.06);
+    --st-shadow-hover:   0 10px 24px rgba(37, 99, 235, 0.14);
+    --st-transition:     all 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--st-page-bg);
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.06), transparent 45%),
+        radial-gradient(circle at 100% 0%, rgba(124, 58, 237, 0.05), transparent 45%);
+    background-attachment: fixed;
+    color: var(--st-ink);
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* ---------- TOP NAVIGATION ---------- */
+.topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--st-line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.topnav__brand {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    background: var(--st-gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--st-primary);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border: 1px solid #BFDBFE;
+    border-radius: var(--st-radius-sm);
+    background: var(--st-primary-light);
+    transition: var(--st-transition);
+}
+
+.back-button:hover {
+    background: var(--st-gradient-primary);
+    color: var(--st-white);
+    border-color: var(--st-primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    transform: translateY(-1px);
+}
+
+/* ---------- PAGE ---------- */
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 45px 30px 70px;
+}
+
+/* ---------- REPORT HEADER ---------- */
+.report-header {
+    background: var(--st-card-bg);
+    border: 1px solid var(--st-line);
+    border-radius: var(--st-radius);
+    padding: 30px 34px;
+    margin-bottom: 30px;
+    box-shadow: var(--st-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.report-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--st-gradient-primary);
+}
+
+.report-title {
+    margin: 0 0 26px;
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--st-ink);
+    letter-spacing: -0.02em;
+}
+
+.patient-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 14px;
+}
+
+.patient-info-item {
+    font-size: 14.5px;
+    line-height: 1.5;
+}
+
+.patient-info-label {
+    font-weight: 700;
+    color: var(--st-ink);
+}
+
+.patient-info-value {
+    color: var(--st-ink);
+    font-weight: 500;
+}
+
+/* ---------- SECTION TITLE ---------- */
+.section-title {
+    margin: 0 0 16px;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--st-ink);
+}
+
+/* ---------- TABLE CARD ---------- */
+.table-card {
+    background: var(--st-card-bg);
+    border: 1px solid var(--st-line);
+    border-radius: var(--st-radius);
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: var(--st-shadow);
+}
+
+#sessions-table {
+    width: 100% !important;
+}
+
+#sessions-table thead th {
+    background: var(--st-gradient-header);
+    color: #475569;
+    text-align: center !important;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--st-line);
+}
+
+#sessions-table tbody td {
+    text-align: center;
+    padding: 15px 16px;
+    font-size: 14px;
+    color: var(--st-ink);
+    border-bottom: 1px solid var(--st-line);
+    vertical-align: middle;
+}
+
+#sessions-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+#sessions-table tbody tr:hover {
+    background: var(--st-card-blue);
+}
+
+/* ---------- DATATABLES ---------- */
+.dt-container {
+    padding: 18px 20px;
+}
+
+.dt-layout-row {
+    margin-bottom: 16px;
+}
+
+.dt-search input,
+.dt-length select {
+    border: 1px solid var(--st-line-dark) !important;
+    border-radius: var(--st-radius-sm) !important;
+    padding: 8px 12px !important;
+    background: var(--st-white) !important;
+    color: var(--st-ink) !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dt-search input:focus,
+.dt-length select:focus {
+    outline: none;
+    border-color: var(--st-primary) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.dt-info {
+    color: var(--st-ink) !important;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.dt-paging button {
+    border-radius: 7px !important;
+    color: var(--st-ink) !important;
+    font-weight: 600;
+    transition: var(--st-transition);
+}
+
+.dt-paging button.disabled {
+    color: var(--st-line-dark) !important;
+}
+
+.dt-paging button.current {
+    background: var(--st-gradient-primary) !important;
+    color: var(--st-white) !important;
+    border-color: var(--st-primary) !important;
+}
+
+.dt-paging button:hover {
+    background: var(--st-primary-light) !important;
+    color: var(--st-primary-dark) !important;
+}
+
+/* ---------- VIEW RESULTS BUTTON ---------- */
+.view-results-button {
+    display: inline-block;
+    border: none;
+    border-radius: var(--st-radius-sm);
+    padding: 9px 16px;
+    background: var(--st-gradient-primary);
+    color: var(--st-white);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--st-transition);
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.view-results-button:hover {
+    background: var(--st-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+/* ---------- RESULTS SECTION ---------- */
+.results-section {
+    display: none;
+    background: var(--st-card-bg);
+    border: 1px solid var(--st-line);
+    border-radius: var(--st-radius);
+    overflow: hidden;
+    margin-top: 30px;
+    box-shadow: var(--st-shadow);
+}
+
+.results-section.is-visible {
+    display: block;
+    animation: st-fade-in 0.2s ease;
+}
+
+@keyframes st-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: var(--st-gradient-paper);
+    border-bottom: 1px solid var(--st-line);
+}
+
+.results-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--st-ink);
+}
+
+.results-subtitle {
+    margin: 4px 0 0;
+    color: var(--st-muted);
+    font-size: 13px;
+}
+
+.close-results-button {
+    border: 1px solid #FECACA;
+    background: var(--st-danger-light);
+    color: var(--st-danger);
+    border-radius: var(--st-radius-sm);
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--st-transition);
+}
+
+.close-results-button:hover {
+    background: var(--st-danger);
+    color: var(--st-white);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.results-body {
+    padding: 0;
+}
+
+.assessment-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--st-line);
+    transition: background 0.15s ease;
+}
+
+.assessment-row:last-child {
+    border-bottom: none;
+}
+
+.assessment-row:hover {
+    background: var(--st-card-blue);
+}
+
+.assessment-name {
+    min-width: 240px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--st-ink);
+}
+
+.assessment-result {
+    flex: 1;
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--st-muted);
+}
+
+.result-item {
+    margin-bottom: 4px;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-item strong {
+    color: var(--st-ink);
+}
+
+.results-loading,
+.results-empty {
+    padding: 45px 20px;
+    text-align: center;
+    color: var(--st-muted);
+    font-size: 14px;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 700px) {
+    .topnav {
+        padding: 16px 18px;
+    }
+
+    .page {
+        padding: 28px 18px 50px;
+    }
+
+    .report-header {
+        padding: 24px 20px;
+    }
+
+    .patient-info {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    .dt-container {
+        min-width: 700px;
+    }
+
+    .results-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .assessment-row {
+        display: block;
+        padding: 18px 20px;
+    }
+
+    .assessment-name {
+        min-width: auto;
+        margin-bottom: 8px;
+    }
+
+    .assessment-result {
+        text-align: left;
+    }
+}
