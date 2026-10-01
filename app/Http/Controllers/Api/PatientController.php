@@ -32,6 +32,11 @@ class PatientController extends Controller
         } catch (ValidationException $e) {
 
             if (isset($e->errors()['phone'])) {
+                // The phone already belongs to a registered patient - send
+                // their record back so the app can log them straight in
+                // instead of just failing the registration.
+                $existingPatient = Patient::where('phone', $request->input('phone'))->first();
+
                 return response()->json([
                     'success' => false,
                     'message' => 'This User is already exists.',
@@ -39,7 +44,8 @@ class PatientController extends Controller
                         'phone' => [
                             'This phone number is already registered.'
                         ]
-                    ]
+                    ],
+                    'data' => $existingPatient,
                 ], 422);
             }
 
