@@ -5,6 +5,10 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminAssessmentResultController;
 
+// Public - no auth required. This is the URL to give Google Play / app
+// stores as the app's privacy policy link.
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy-policy');
+
 Route::prefix('admin')->group(function () {
 
     Route::get('/login', [AuthController::class, 'showLogin'])
