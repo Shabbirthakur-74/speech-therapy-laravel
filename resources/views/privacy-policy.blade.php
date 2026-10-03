@@ -38,7 +38,7 @@
             color: var(--ink);
         }
 
-        .mono, .label, .todo { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+        .mono, .label { font-family: "IBM Plex Mono", ui-monospace, monospace; }
 
         .page {
             max-width: 760px;
@@ -108,15 +108,6 @@
         }
         td.muted { color: var(--muted); }
 
-        .todo {
-            background: var(--flag-bg);
-            color: var(--flag-ink);
-            border: 1px solid var(--flag-border);
-            border-radius: 5px;
-            padding: 1px 6px;
-            font-size: 13.5px;
-        }
-
         .callout {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -151,24 +142,15 @@
         <span class="eyebrow">Privacy Policy &mdash; Draft</span>
         <h1>Speech Therapy App</h1>
         <div class="meta-row">
-            <span>Last updated: <strong>[DATE &mdash; set before publishing]</strong></span>
-            <span>Applies to: <strong>Speech Therapy mobile app (Android / iOS)</strong></span>
+            <span>Last updated: <strong>[30/09/2026]</strong></span>
+            <span>Applies to: <strong>Speech Therapy mobile app (Android)</strong></span>
         </div>
     </header>
-
-    <div class="draft-banner">
-        <strong>DRAFT &mdash; review before this goes live.</strong> This reflects what the app actually collects today. Before relying on it as your published policy:
-        <ul>
-            <li>Fill in every <span class="todo">bracketed placeholder</span> &mdash; organization name, contact details, retention period, dates.</li>
-            <li>It states data is sent over an encrypted (HTTPS) connection &mdash; confirm that's true for every backend endpoint before publishing, or this page will overstate your security.</li>
-            <li>This is a health-data app that may be used with minors. Have it reviewed by whoever handles legal/compliance, especially the children's privacy section below.</li>
-        </ul>
-    </div>
 
     <section>
         <div class="section-head"><span class="section-num">01</span><h2>Who we are</h2></div>
         <p class="lead">This policy explains what the Speech Therapy app collects, why, and how it's handled.</p>
-        <p>The Speech Therapy app is operated by <span class="todo">[organization's full legal name]</span>, <span class="todo">[address]</span> ("we", "us"). This policy covers the mobile app and the backend services it talks to.</p>
+        <p>The Speech Therapy app is operated by Dr Noorain Alam, NEW OPD,4TH FLOOR, SPEECH AND HEARING UNIT, ENT DEPT. PGIMER CHANDIGARH 160012. This policy covers the mobile app and the backend services it talks to.</p>
     </section>
 
     <section>
@@ -213,10 +195,10 @@
         <div class="section-head"><span class="section-num">04</span><h2>Storage &amp; security</h2></div>
         <p>Your information is transmitted to and stored on servers that we operate. We take reasonable steps to protect it, including:</p>
         <ul>
-            <li>Transmitting data over an encrypted (HTTPS) connection <span class="todo">[confirm this is true before publishing &mdash; see draft banner]</span></li>
-            <li>Restricting access to stored data to authorized personnel</li>
+            <li>Transmitting data over an encrypted (HTTPS) connection.</li>
+            <li>Restricting access to stored data to authorized personnel.</li>
         </ul>
-        <p>We retain your information for <span class="todo">[retention period, e.g. "the duration of your care, plus X years"]</span>, after which it is <span class="todo">[deleted / anonymized &mdash; specify]</span>.</p>
+        <p>We retain your information for 3 Years, after which it is deleted.</p>
     </section>
 
     <section>
@@ -224,23 +206,23 @@
         <p>We do not sell your information, and we do not share it with advertisers.</p>
         <p>We may share your information with:</p>
         <ul>
-            <li>The clinician or institution administering your assessment <span class="todo">[name the institution, if applicable]</span></li>
-            <li>Service providers who host our servers, under terms that require them to protect your data <span class="todo">[name hosting provider if required to disclose]</span></li>
+            <li>The clinician or institution administering your assessment Dr Noorain Alam </li>
+            <li>Service providers who host our servers, under terms that require them to protect your data Hostinger</li>
         </ul>
     </section>
 
     <section>
         <div class="section-head"><span class="section-num">06</span><h2>Your choices &amp; rights</h2></div>
-        <p>You can ask us to access, correct, or delete your information at any time by contacting us at <span class="todo">[support email]</span>. We will respond to deletion requests within <span class="todo">[X business days]</span>.</p>
+        <p>You can ask us to access, correct, or delete your information at any time by contacting us at noorain.apps@gmail.com . We will respond to deletion requests within 3 Business Days.</p>
         <div class="callout">
             <span class="label">Current process</span>
-            Deletion requests are currently handled manually by our team rather than through an in-app control. <span class="todo">[Update this once/if an in-app deletion option exists.]</span>
+            Deletion requests are currently handled manually by our team rather than through an in-app control. 
         </div>
     </section>
 
     <section>
         <div class="section-head"><span class="section-num">07</span><h2>Children's privacy</h2></div>
-        <p><span class="todo">[This app may be used to assess children. State clearly here whether the app is intended for use by/with minors, who provides consent on their behalf (e.g. a parent, guardian, or clinician), and how that affects data handling. This section needs sign-off from whoever handles compliance &mdash; it has real legal weight.]</span></p>
+        <p>This app could be used by minors. Any Permissions and consent will be taken from parents or guardians.</p>
     </section>
 
     <section>
@@ -263,15 +245,11 @@
         <div class="section-head"><span class="section-num">10</span><h2>Contact us</h2></div>
         <p>Questions about this policy or your data can be sent to:</p>
         <p>
-            <span class="todo">[Organization name]</span><br>
-            <span class="todo">[Email address]</span><br>
-            <span class="todo">[Postal address]</span>
+            Dr Noorain Alam <br>
+            noorain.apps@gmail.com <br>
+            NEW OPD,4TH FLOOR, SPEECH AND HEARING UNIT, ENT DEPT. PGIMER CHANDIGARH 160012
         </p>
     </section>
-
-    <footer class="doc-footer">
-        Drafted from the app's current data-collection behavior. Replace every <span class="todo">bracketed</span> item and have it reviewed before publishing.
-    </footer>
 
 </div>
 
