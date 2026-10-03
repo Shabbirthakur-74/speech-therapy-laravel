@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\AdminAssessmentResultController;
 // stores as the app's privacy policy link.
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy-policy');
 
+// Public - URL for the store listing's "delete account" field.
+Route::view('/delete-account', 'delete-account')->name('delete-account');
+
 Route::prefix('admin')->group(function () {
 
     Route::get('/login', [AuthController::class, 'showLogin'])
