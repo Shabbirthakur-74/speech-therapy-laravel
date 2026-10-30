@@ -52,6 +52,18 @@ Route::middleware('auth:admin')->group(function () {
     )->name('admin.patient.sessions.data');
 
 
+    // Delete a patient and all of their data
+    Route::delete(
+        '/admin/patients/{patientId}',
+        [DashboardController::class, 'destroyPatient']
+    )->name('admin.patient.destroy');
+
+    // Delete one assessment session
+    Route::delete(
+        '/admin/patients/{patientId}/assessment-results/{sessionId}',
+        [AdminAssessmentResultController::class, 'destroySession']
+    )->name('admin.patient.session.destroy');
+
     // Get assessment results for a specific session
     Route::get(
         '/admin/patients/{patientId}/assessment-results/{sessionId}',
