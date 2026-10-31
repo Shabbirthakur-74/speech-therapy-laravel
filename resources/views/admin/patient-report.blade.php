@@ -81,8 +81,8 @@
                     <th style="width:80px;">S.No</th>
                     <th>Session</th>
                     <th>Date &amp; Time</th>
-                    <th>Action</th>
-                    <th>Action</th>
+                    <th><span class="th-merged">Actions</span></th>
+                    <th aria-label="Delete"></th>
                 </tr>
             </thead>
             <tbody></tbody>

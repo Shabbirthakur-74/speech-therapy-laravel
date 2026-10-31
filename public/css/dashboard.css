@@ -630,6 +630,31 @@ body {
 #sessions-table th:nth-child(4) { width: 22% !important; }
 #sessions-table th:nth-child(5) { width: 18% !important; }
 
+/* One "Actions" heading centred across the two action columns. The heading is
+   drawn as wide as both columns together (17% + 13%, and 22% + 18%). */
+#patients-table th:nth-child(5),
+#sessions-table th:nth-child(4) {
+    position: relative;
+}
+
+.th-merged {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+#patients-table .th-merged { width: 176.5%; }
+#sessions-table .th-merged { width: 181.8%; }
+
+/* buttons centred inside their cells */
+#patients-table td:nth-child(5),
+#patients-table td:nth-child(6),
+#sessions-table td:nth-child(4),
+#sessions-table td:nth-child(5) {
+    text-align: center;
+}
 .table-card .row-actions {
     justify-content: flex-start;
 }

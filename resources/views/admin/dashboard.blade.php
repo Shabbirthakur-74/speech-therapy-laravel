@@ -61,8 +61,8 @@
                         <th>Patient Name</th>
                         <th>Patient ID</th>
                         <th>Phone Number</th>
-                        <th>Actions</th>
-                        <th>Actions</th>
+                        <th><span class="th-merged">Actions</span></th>
+                        <th aria-label="Delete"></th>
                     </tr>
                 </thead>
             </table>
